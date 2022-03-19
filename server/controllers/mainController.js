@@ -95,10 +95,10 @@ module.exports = {
     filterPosts: async (req, res) => {
         const {city, price} = req.body
 
-        // const filterPrice = {$gte: priceFrom[0], $lte: priceTo[1]}
+        const filter = city.length === 0 ? {price} : {city, price} || price.length === 0 ? {city} : {city, price}
 
-        // const filter = city.length === 0 ? {price} : {city, price} || price.length === 0 ? {city} : {city, price}
-        // const posts = await postSchema.find(filter)
+        const posts = await postSchema.find(filter)
+
         res.send({success: true, posts})
     },
     makeReservation: async (req, res) => {
