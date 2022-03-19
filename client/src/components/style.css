@@ -1,0 +1,76 @@
+.toolbar {
+    height: 80px;
+    background-color: goldenrod;
+    display: flex;
+    justify-content: space-between;
+}
+.box0 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.box1 {
+    border: 1px solid cadetblue;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.box2 {
+     border: 1px solid cadetblue;
+     margin: 10px;
+     padding: 10px;
+     display: flex;
+ }
+.box3 {
+    background-color: goldenrod;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.pictureBox {
+    border:1px solid black;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    overflow-x: scroll;
+}
+.inp {
+    width: 200px;
+    margin: 5px;
+    height: 20px;
+}
+.inp1 {
+    width: 100px;
+    margin: 5px;
+    height: 20px;
+}
+.btn {
+    margin: 10px;
+}
+.btn1 {
+    margin: 0 5px 0 5px;
+}
+.img {
+    height: 100px;
+    margin: 5px;
+}
+.img1 {
+    height: 200px;
+    margin: 5px;
+}
+.img2 {
+    height: 150px;
+    margin: 5px;
+}
+.flex {
+    display: flex;
+}
+.column {
+    flex-direction: column;
+}
+.no-topBottom-margin {
+    margin: 0 5px 0 5px;
+}
