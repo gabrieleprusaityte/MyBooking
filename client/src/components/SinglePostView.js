@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react';
 import "./style.css"
 import mainContext from "../context/mainContext";
-import DateRangePicker from '@wojtekmaj/react-daterange-picker'
 import http from "../plugin/http";
+import DateRangePicker from '@wojtekmaj/react-daterange-picker'
 
 const SinglePostView = () => {
 
@@ -22,6 +22,7 @@ const SinglePostView = () => {
         }
 
         http.post(reservationDate, "/reserve").then(data => {
+            console.log(data)
             setBookings(data.bookings)
             setMyBookings(data.userBooking)
         })
@@ -43,9 +44,12 @@ const SinglePostView = () => {
             <button onClick={() => setView(!view)}>Set Reservation</button>
             {view &&
             <div>
-                <h3>Calendar</h3>
-                <DateRangePicker onChange={onChange} value={value}/>
-                <button onClick={makeReservation} className="btn">Submit</button>
+                <div className="box0">
+                    <h3>Calendar</h3>
+                    <DateRangePicker onChange={onChange} value={value}/>
+                    <button onClick={makeReservation} className="btn">Submit</button>
+                </div>
+
                 <div>
                     {bookings.map((x, i) => <div key={i}>
                         <div><b>- from </b> {x.bookingDate[0]}</div>

@@ -12,12 +12,19 @@ module.exports = {
 
         const hash = await bcrypt.hash(password, 10)
 
+        const userRegistered = await userSchema.findOne({email})
+
+        if (!userRegistered) {
             const user = new userSchema
             user.email = email
             user.password = hash
             user.isAdmin = isAdmin
             await user.save()
             res.send({success: true, user})
+        } else {
+            res.send({success: false, message: "such user exists"})
+        }
+
     },
     loginUser: async (req, res) => {
         const {email, password, loggedIn} = req.body
@@ -115,5 +122,6 @@ module.exports = {
         const userBooking = await bookingSchema.find({userId})
 
         res.send({bookings, userBooking})
+
     },
 }
